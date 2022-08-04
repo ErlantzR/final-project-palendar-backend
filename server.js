@@ -13,6 +13,9 @@ app.use(cors());
 
 app.use('/users', userRoutes);
 app.use('/appointments', appointmentRoutes);
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
